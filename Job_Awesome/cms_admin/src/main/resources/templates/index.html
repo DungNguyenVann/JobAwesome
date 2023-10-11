@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{fragments/header ::header}"></div>
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Topbar Start -->
+    <div th:replace="~{fragments/navbar ::navbar-custom}"></div>
+    <!-- end Topbar -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div th:replace="~{fragments/menu ::left-side-menu}"></div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h1 class="page-title">HELLO!</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        <!-- Footer Start -->
+        <div th:replace="~{fragments/footer ::footer}"></div>
+        <!-- end Footer -->
+
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+<!-- Vendor js -->
+<script th:src="@{/job-awesome/assets/js/vendor.min.js}"></script>
+
+<!-- third party js -->
+<!--<script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="../assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>-->
+<!--<script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>-->
+<!--<script src="../assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>-->
+<!--<script src="../assets/libs/jquery-datatables-checkboxes/js/dataTables.checkboxes.min.js"></script>-->
+<!-- third party js ends -->
+
+<!-- Datatables init -->
+<!--<script src="../assets/js/pages/customers.init.js"></script>-->
+
+<!-- App js -->
+<script th:src="@{/job-awesome/assets/js/app.min.js}"></script>
+
+</body>
+</html>

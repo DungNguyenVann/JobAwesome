@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{fragments/header ::header}"></div>
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Topbar Start -->
+    <div th:replace="~{fragments/navbar ::navbar-custom}"></div>
+    <!-- end Topbar -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div th:replace="~{fragments/menu ::left-side-menu}"></div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-light">
+                                        <h4 class="modal-title" id="myCenterModalLabel">Edit Config</h4>
+                                    </div>
+                                    <div class="modal-body p-4">
+                                        <form th:action="@{/saveConfigs}"
+                                              th:object="${configs}"
+                                              enctype="multipart/form-data"
+                                              method="post"
+                                        >
+                                            <div class="form-group">
+                                                <label for="name">ID</label>
+                                                <input th:field="*{id}" type="text" class="form-control" id="name" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Value</label>
+                                                <input th:field="*{value}" type="text" class="form-control" id="name"
+                                                       placeholder="Enter Value">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Key</label>
+                                                <input th:field="*{configs_key}" type="text" class="form-control"
+                                                       id="name"
+                                                       placeholder="Enter Key">
+                                            </div>
+                                            <!--                                            <div class="form-group">-->
+                                            <!--                                                <label for="exampleInputEmail1">Description</label>-->
+                                            <!--                                                <input th:field="*{email}" type="email" class="form-control"-->
+                                            <!--                                                       id="exampleInputEmail1"-->
+                                            <!--                                                       placeholder="Enter email">-->
+                                            <!--                                            </div>-->
+                                            <div class="form-group mb-3">
+                                                <label for="product-description">Description<span
+                                                        class="text-danger">*</span></label>
+                                                <textarea th:field="*{description}" class="form-control"
+                                                          id="product-description" rows="5"
+                                                          placeholder="Please enter description"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="position">Group</label>
+                                                <input th:field="*{configs_group}" type="text" class="form-control"
+                                                       id="position"
+                                                       placeholder="Enter Group">
+                                            </div>
+
+
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">
+                                                    Save
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        2015 -
+                        <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-md-right footer-links d-none d-sm-block">
+                            <a href="javascript:void(0);">About Us</a>
+                            <a href="javascript:void(0);">Help</a>
+                            <a href="javascript:void(0);">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+<!-- Vendor js -->
+<script th:src="@{/job-awesome/assets/js/vendor.min.js}"></script>
+
+<!-- third party js -->
+<!--<script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="../assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>-->
+<!--<script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>-->
+<!--<script src="../assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>-->
+<!--<script src="../assets/libs/jquery-datatables-checkboxes/js/dataTables.checkboxes.min.js"></script>-->
+<!-- third party js ends -->
+<script th:src="@{/job-awesome/assets/libs/summernote/summernote-bs4.min.js}"></script>
+<!-- Select2 js-->
+<script th:src="@{/job-awesome/assets/libs/select2/js/select2.min.js}"></script>
+<!-- Dropzone file uploads-->
+<script th:src="@{/job-awesome/assets/libs/dropzone/min/dropzone.min.js}"></script>
+
+<!-- Init js-->
+<script th:src="@{/job-awesome/assets/js/pages/form-fileuploads.init.js}"></script>
+<script th:src="@{/job-awesome/assets/js/pages/add-product.init.js}"></script>
+
+<!-- App js -->
+<script th:src="@{/job-awesome/assets/js/app.min.js}"></script>
+<!-- Datatables init -->
+<!--<script src="../assets/js/pages/customers.init.js"></script>-->
+
+<!-- App js -->
+<script th:src="@{/job-awesome/assets/js/app.min.js}"></script>
+
+</body>
+</html>
